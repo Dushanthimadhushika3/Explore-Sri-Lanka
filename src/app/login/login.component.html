@@ -1,0 +1,21 @@
+<div class="back">
+  <div class="loginInter"><h2>User Login</h2>
+    <form class = "tp-form">
+      <mat-form-field class = "tp-full-width">
+        <input matInput placeholder = "Email" [formControl] = "emailFormControl">
+        <mat-error *ngIf = "emailFormControl.hasError('email')
+         && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf = "emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class = "tp-full-width">
+        <input matInput placeholder = "Password"  name="Input">
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Login</button>
+    </form></div>
+
+</div>
+
