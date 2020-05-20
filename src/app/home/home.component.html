@@ -1,14 +1,155 @@
-<div class="mainToolBar">
-  <mat-toolbar color="primary" >
-    <div class="toolBarPosition"><mat-toolbar-row>
-      <span>Explore Sri Lanka</span>
-      <button mat-button>About</button>
-      <a mat-button href="http://localhost:4200/login">Login</a>
-    </mat-toolbar-row></div></mat-toolbar>
+<!--navigation bar-->
+
+<nav class="navbar navbar-expand-sm fixed-top navbar-dark" style="background-color: #0d334d; opacity: 0.7;">
+
+  <a class="navbar-brand mb-0 h1" href="#">Explore Sri Lanka</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#about">About</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="gallery">Gallery</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<!--header slideshow-->
+<div id="carouselEx" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselEx" data-slide to="0" class="active"></li>
+    <li data-target="#carouselEx" data-slide to="1"></li>
+    <li data-target="#carouselEx" data-slide to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="background-image: url('/assets/image1.jpg')">
+    </div>
+    <div class="carousel-item" style="background-image: url('/assets/image2.jpg')">
+    </div>
+    <div class="carousel-item" style="background-image: url('/assets/image3.jpg')">
+    </div>
+    <div class="carousel-item" style="background-image: url('/assets/image4.jpg')">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselEx" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselEx" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
-<mat-grid-list cols="3" rowHeight="100px">
-  <mat-grid-tile [colspan]="3" [rowspan]="5">
-  <img src="/assets/loginBackground.jpg">
-  </mat-grid-tile>
-</mat-grid-list>
+<br>
+<!--description about us-->
+<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+
+  <mat-card>
+
+    <h2 class="text-center" id="about">About Us</h2>
+
+    <mat-card-content>
+      <p class="text-center" id="about-content">
+        UNet, evolved from the traditional convolutional neural network, was first designed and applied in 2015 to
+        process biomedical images. As a general convolutional neural network focuses its task on image classification,
+        where input is an image and output is one label, but in biomedical cases, it requires us not only to distinguish
+        whether there is a disease, but also to localise the area of abnormality.UNet, evolved from the traditional
+        convolutional neural network, was first designed and applied in 2015 to
+        process biomedical images. As a general convolutional neural network focuses its task on image classification,
+        where input is an image and output is one label, but in biomedical cases, it requires us not only to distinguish
+        whether there is a disease, but also to localise the area of abnormality.
+      </p>
+      <br>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!--Book us-->
+<div class="card text-black border-light bg-primary mb-3 text-center">
+  <img src="assets/image1.jpg" class="card-img" id="hotels" alt="...">
+  <div class="card-img-overlay">
+    <p class="card-text" style="font-size: large;">Experience the Sri Lankan culture with delicious Sri Lankan foods</p>
+    <a href="booking" class="btn btn-outline-primary">Book now</a>
+  </div>
+</div>
+<br>
+
+<!--categories only images-->
+<h2 class="text-center">CATEGORIES</h2>
+<br>
+<div class="card-group">
+  <div class="card">
+    <img src="assets/A.jpg" class="card-img" id="img" alt="...">
+    <div class="card-img-overlay">
+      <div class="card-footer bg-transparent border-success">
+        <p class="font-weight-bold">Safari</p>
+      </div>
+      <div class="middle">
+        <img src="assets/sla.png" id="img">
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <img src="assets/B.jpg" class="card-img" id="img" alt="...">
+    <div class="card-img-overlay">
+      <div class="card-footer bg-transparent border-success">
+        <p class="font-weight-bold">Town View</p>
+      </div>
+      <div class="middle">
+        <img src="assets/sla.png" id="img">
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <img src="assets/C.jpg" class="card-img" id="img" alt="...">
+    <div class="card-img-overlay">
+      <div class="card-footer bg-transparent border-success">
+        <p class="font-weight-bold">Hiking</p>
+      </div>
+      <div class="middle">
+        <img src="assets/sla.png" id="img">
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <img src="assets/image5.jpg" class="card-img" id="img" alt="...">
+    <div class="card-img-overlay">
+      <div class="card-footer bg-transparent border-success">
+        <p class="font-weight-bold">Historical</p>
+      </div>
+      <div class="middle">
+        <img src="assets/sl.webp" id="img">
+      </div>
+    </div>
+
+  </div>
+</div>
+<br>
+
+
+
+
+
 

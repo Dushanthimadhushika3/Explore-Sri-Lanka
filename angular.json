@@ -131,10 +131,5 @@
       }
     }
   },
-  "defaultProject": "SampleLoginApp",
-  "schematics": {
-    "@schematics/angular:component": {
-      "styleext": "sass"
-    }
-  }
+  "defaultProject": "SampleLoginApp"
 }

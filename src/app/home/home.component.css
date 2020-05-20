@@ -1,9 +1,57 @@
-.mainToolBar{
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+#about-content{
   color: black;
+  font-size: 17px;
 }
-.toolBarPosition{
+h2{
+  font-family: Arial, Helvetica, sans-serif;
+  background-position: center;
+}
+.header{
+ font-size:50px;
+}
+.carousel-item{
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+}
+#img{
+  width: auto;
+  height: 300px;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
 
+.card:hover #img {
+  opacity: 0.8;
+}
+
+.card:hover .middle {
+  opacity: 0.5;
+}
+#hotels{
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
 }
