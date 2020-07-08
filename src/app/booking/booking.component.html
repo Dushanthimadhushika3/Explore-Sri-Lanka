@@ -4,49 +4,45 @@
     <h3>Start Tour with us</h3>
   </div>
   <div class="row body">
-    <form [formGroup]="bookingForm" (ngSubmit)="submitStudentData()" novalidate>
+    <form [formGroup]="bookForm" (ngSubmit)="submitBook()" novalidate>>
       <div class="row">
         <div class="col-md-15">
           <div class="form-group">
-            <input type="text" name="txtName" formControlName="name" id="validationCustom01" class="form-control" placeholder="Full Name *" required/>
-            <p *ngIf="firstName.touched && firstName.invalid" class="error"><sup>*</sup>Please enter atleast first name</p>
-          <p *ngIf="firstName.errors?.minlength" class="error"><sup>*</sup>Name shouldn't be less than 2 words</p>
+            <input type="text" name="name" formControlName="name" class="form-control" placeholder="Full Name *" required/>
+            <p *ngIf="name.touched && name.invalid" class="error"><sup>*</sup>Please enter atleast first name</p>
+          <p *ngIf="name.errors?.minlength" class="error"><sup>*</sup>Name shouldn't be less than 2 words</p>
           </div>
           <div class="form-group">
-            <input type="email" name="txtEmail" id="validationCustom02" class="form-control" placeholder="Email *" value="" required/>
-            <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please fill out this field.</div>
+            <input type="email" name="email" formControlName="email" class="form-control" placeholder="Email *" value="" required/>
+            <p *ngIf="email.touched && email.invalid" class="error"><sup>*</sup>Please provide email</p>
+          <p *ngIf="email.errors?.pattern" class="error"><sup>*</sup>Please enter correct email</p>
+        </div>
+          <div class="form-group">
+            <input type="tel" name="telephone" formControlName="telephone" class="form-control" placeholder="Telephone No. *" value="" required/>
+            <p *ngIf="telephone.touched && telephone.invalid" class="error"><sup>*</sup>Please provide contact
+              number</p>
+            <p *ngIf="telephone.errors?.pattern" class="error"><sup>*</sup>Use numbers only
+              number</p>
           </div>
           <div class="form-group">
-            <input type="tel" name="txtPhone" id="validationCustom03" class="form-control" placeholder="Telephone No. *" value="" required/>
-            <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please fill out this field.</div>
-          </div>
-          <div class="form-group">
-            <select class="custom-select" id="validationDefault04" required>
+            <select class="custom-select" formControlName="country" required>
               <option selected disabled value="">Country of residence *</option>
               <option>Sri Lanka</option>
               <option>Australia</option>
               <option>USA</option>
             </select>
-            <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please fill out this field.</div>
           </div>
           <div class="form-group">
-            <input type="number" name="guests" id="validationCustom05" min="1" max="50" class="form-control" placeholder="Number of Guests *" value="" required />
-            <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please fill out this field.</div>
+            <input type="number" name="guests" formControlName="guest_no"min="1" max="50" class="form-control" placeholder="Number of Guests *" value="" required />
           </div>
           
           <div class="form-group">
             <label for="validationCustom06">Check in out date *</label>
-            <input type="date" name="arrival" id="validationCustom06" class="form-control" placeholder="Arrival *" value="" required/>
-            <input type="date" name="departure" id="validationCustom06" class="form-control" placeholder="Departure *" value="" required/>
-            <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please fill out this field.</div>
+            <input type="date" name="arrival" formControlName="arrival" class="form-control" placeholder="Arrival *" value="" required/>
+            <input type="date" name="departure" formControlName="departure" class="form-control" placeholder="Departure *" value="" required/>
           </div>
           <div class="form-group">
-            <select class="custom-select" id="validationDefault07" required>
+            <select class="custom-select" formControlName="destination"required>
               <option selected disabled value="">Destination *</option>
               <option>Safari</option>
               <option>Historical</option>
@@ -57,7 +53,7 @@
           </div>
        
             <div class="form-group">
-              <textarea name="txtMsg" cols="46" rows="3" class="form-control" placeholder="Your Message *"
+              <textarea name="txtMsg" cols="46" rows="3" class="form-control" formControlName="message" placeholder="Your Message *"
                 style="width: 100%; height: 150px;"></textarea>
          
           </div>
@@ -65,12 +61,10 @@
             <label class="form-check-label">
               <input class="form-check-input" type="checkbox" name="remember" required>
               Agree to Terms and conditions.
-              <div class="valid-feedback">Valid.</div>
-              <div class="invalid-feedback">Check this checkbox to continue.</div>
             </label>
           </div>
 
-          <button type="button" class="btn btn-outline-info" id="btn">Book</button>
+          <button type="submit" class="btn btn-outline-info" id="btn" [disabled]="!bookForm.valid">Book</button>
           <small>or press <strong>enter</strong></small>
         </div>
      

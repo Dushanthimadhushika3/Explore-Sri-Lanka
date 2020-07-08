@@ -12,6 +12,10 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {SlideshowModule} from 'ng-simple-slideshow';
 import { BookingComponent } from './booking/booking.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+import { BookService } from './shared/book.service';
 
 
 @NgModule({
@@ -31,10 +35,13 @@ import { GalleryComponent } from './gallery/gallery.component';
     ReactiveFormsModule,
     MatButtonToggleModule,
     MatGridListModule,
-    SlideshowModule
+    SlideshowModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase), // Main Angular fire module 
+    AngularFireDatabaseModule 
  
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
